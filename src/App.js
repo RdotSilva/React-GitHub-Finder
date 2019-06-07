@@ -7,7 +7,7 @@ class App extends Component {
 		return (
 			<div className="App">
 				<h1>Hello from React</h1>
-				<Navbar />
+				<Navbar title="GitHub Finder" />
 			</div>
 		);
 	}
