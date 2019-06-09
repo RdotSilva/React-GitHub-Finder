@@ -22,7 +22,7 @@ class App extends Component {
 				<h1>Hello from React</h1>
 				<Navbar />
 				<div className="container">
-					<Users />
+					<Users loading={this.state.loading} users={this.state.users} />
 				</div>
 			</div>
 		);
