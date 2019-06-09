@@ -5,6 +5,11 @@ import Users from "./components/users/Users";
 import Axios from "axios";
 
 class App extends Component {
+	state = {
+		users: [],
+		loading: false
+	};
+
 	async componentDidMount() {
 		const res = await Axios.get("https://api.github.com/users");
 	}
