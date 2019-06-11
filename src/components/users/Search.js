@@ -8,7 +8,8 @@ export class Search extends Component {
 
 	static propTypes = {
 		searchUsers: PropTypes.func.isRequired,
-		clearUsers: PropTypes.func.isRequired
+		clearUsers: PropTypes.func.isRequired,
+		showClear: PropTypes.bool.isRequired
 	};
 
 	onChange = e => this.setState({ [e.target.name]: e.target.value });
