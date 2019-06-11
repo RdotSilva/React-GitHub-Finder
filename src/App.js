@@ -22,7 +22,8 @@ class App extends Component {
 		this.setState({ users: res.data, loading: false });
 	}
 
-	searchUsers = text => {
+	// Search GitHub users
+	searchUsers = async text => {
 		console.log(text);
 	};
 
