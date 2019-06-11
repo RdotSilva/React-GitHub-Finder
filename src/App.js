@@ -30,7 +30,7 @@ class App extends Component {
 			}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
 		);
 
-		this.setState({ users: res.data.items, loading: false });
+		this.setState({ users: res.data, loading: false });
 	};
 
 	render() {
