@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
 export class Search extends Component {
+	state = {
+		text: ""
+	};
 	render() {
 		return (
 			<div>
