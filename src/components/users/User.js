@@ -19,10 +19,10 @@ export class User extends Component {
 			public_repos,
 			public_gists,
 			hireable
-		} = this.props.users;
+		} = this.props.user;
 
 		const { loading } = this.props;
-		return <div>User</div>;
+		return <div>{name}</div>;
 	}
 }
 
