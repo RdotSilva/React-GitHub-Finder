@@ -7,6 +7,7 @@ import Search from "./components/users/Search";
 import Axios from "axios";
 import Alert from "./components/layout/Alert";
 import About from "./components/pages/About";
+import User from "./components/users/User";
 
 class App extends Component {
 	state = {
@@ -41,7 +42,7 @@ class App extends Component {
 	};
 
 	// Get single GitHub user
-	getUser = async (username) => {
+	getUser = async username => {
 		this.setState({ loading: true });
 
 		const res = await Axios.get(
@@ -52,7 +53,6 @@ class App extends Component {
 
 		this.setState({ user: res.data, loading: false });
 	};
-	}
 
 	// Clears users from state
 	clearUsers = () => this.setState({ users: [], loading: false });
@@ -65,7 +65,7 @@ class App extends Component {
 	};
 
 	render() {
-		const { users, loading } = this.state;
+		const { users, loading, user } = this.state;
 		return (
 			<Router>
 				<div className="App">
@@ -89,6 +89,15 @@ class App extends Component {
 								)}
 							/>
 							<Route exact path="/about" component={About} />
+							<Route
+								exact
+								path="/user/:login"
+								render={props => (
+									<User>
+										{...props} getUser={this.getUser} user={user}
+									</User>
+								)}
+							/>
 						</Switch>
 					</div>
 				</div>
