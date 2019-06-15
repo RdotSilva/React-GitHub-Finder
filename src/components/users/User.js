@@ -75,6 +75,13 @@ export class User extends Component {
 									</Fragment>
 								)}
 							</li>
+							<li>
+								{company && (
+									<Fragment>
+										<strong>Username:</strong> {company}
+									</Fragment>
+								)}
+							</li>
 						</ul>
 					</div>
 				</div>
