@@ -28,7 +28,8 @@ export class User extends Component {
 			following,
 			public_repos,
 			public_gists,
-			hireable
+			hireable,
+			company
 		} = this.props.user;
 
 		const { loading } = this.props;
@@ -78,7 +79,7 @@ export class User extends Component {
 							<li>
 								{company && (
 									<Fragment>
-										<strong>Username:</strong> {company}
+										<strong>Company:</strong> {company}
 									</Fragment>
 								)}
 							</li>
