@@ -98,6 +98,9 @@ export class User extends Component {
 					<div className="badge badge-primary">Following: {following}</div>
 					<div className="badge badge-primary">
 						Public Repos: {public_repos}
+						<div className="badge badge-primary">
+							Public Gists: {public_gists}
+						</div>
 					</div>
 				</div>
 			</Fragment>
