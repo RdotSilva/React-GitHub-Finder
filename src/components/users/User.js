@@ -67,6 +67,15 @@ export class User extends Component {
 						<a href={html_url} className="btn btn-dark my-1">
 							Visit GitHub Profile
 						</a>
+						<ul>
+							<li>
+								{login && (
+									<Fragment>
+										<strong>Username:</strong> {login}
+									</Fragment>
+								)}
+							</li>
+						</ul>
 					</div>
 				</div>
 			</Fragment>
