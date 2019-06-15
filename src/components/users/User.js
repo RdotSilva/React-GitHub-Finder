@@ -95,6 +95,7 @@ export class User extends Component {
 				</div>
 				<div className="card text-center">
 					<div className="badge badge-primary">Followers: {followers}</div>
+					<div className="badge badge-primary">Following: {following}</div>
 				</div>
 			</Fragment>
 		);
