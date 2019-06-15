@@ -86,12 +86,15 @@ export class User extends Component {
 							<li>
 								{website && (
 									<Fragment>
-										<strong>Website: :</strong> {website}
+										<strong>Website:</strong> {website}
 									</Fragment>
 								)}
 							</li>
 						</ul>
 					</div>
+				</div>
+				<div className="card text-center">
+					<div className="badge badge-primary">Followers: {followers}</div>
 				</div>
 			</Fragment>
 		);
