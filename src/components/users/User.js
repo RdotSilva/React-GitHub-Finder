@@ -83,6 +83,13 @@ export class User extends Component {
 									</Fragment>
 								)}
 							</li>
+							<li>
+								{website && (
+									<Fragment>
+										<strong>Website: :</strong> {website}
+									</Fragment>
+								)}
+							</li>
 						</ul>
 					</div>
 				</div>
