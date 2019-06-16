@@ -12,7 +12,8 @@ export class User extends Component {
 	static propTypes = {
 		loading: PropTypes.bool,
 		user: PropTypes.object.isRequired,
-		getUser: PropTypes.func.isRequired
+		getUser: PropTypes.func.isRequired,
+		getUserRepos: PropTypes.func.isRequired
 	};
 
 	render() {
