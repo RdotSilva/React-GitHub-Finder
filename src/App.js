@@ -13,6 +13,7 @@ class App extends Component {
 	state = {
 		users: [],
 		user: {},
+		epos: [],
 		loading: false,
 		alert: null
 	};
