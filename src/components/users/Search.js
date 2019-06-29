@@ -2,9 +2,19 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 const Search = ({ searchUsers, showClear, clearUsers }) => {
+	// Class based way of doing state
+	// state = {
+	// 	text: ""
+	// };
+
+	// useState way
 	const [text, setText] = useState("");
 
-	const onChange = e => this.setState({ [e.target.name]: e.target.value });
+	// class way
+	// const onChange = e => this.setState({ [e.target.name]: e.target.value });
+
+	// useState way
+	const onChange = e => setText(e.target.value);
 
 	const onSubmit = e => {
 		e.preventDefault();
