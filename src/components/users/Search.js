@@ -28,13 +28,16 @@ const Search = ({ searchUsers, showClear, clearUsers }) => {
 
 	return (
 		<div>
-			<form onSubmit={this.onSubmit} className="form">
+			{/* <form onSubmit={this.onSubmit} className="form"> */}
+			<form onSubmit={onSubmit} className="form">
 				<input
 					type="text"
 					name="text"
 					placeholder="Search Users..."
-					value={this.state.text}
-					onChange={this.onChange}
+					// value={this.state.text}
+					value={text}
+					// onChange={this.onChange}
+					onChange={onChange}
 				/>
 				<input
 					type="submit"
