@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const Search = ({ searchUsers, showClear, clearUsers }) => {
+const Search = ({ searchUsers, showClear, clearUsers, setAlert }) => {
 	// Class based way of doing state
 	// state = {
 	// 	text: ""
@@ -18,11 +18,15 @@ const Search = ({ searchUsers, showClear, clearUsers }) => {
 
 	const onSubmit = e => {
 		e.preventDefault();
-		if (this.state.text === "") {
-			this.props.setAlert("Please enter something", "light");
+		// if (this.state.text === "") {
+		if (text === "") {
+			// this.props.setAlert("Please enter something", "light");
+			setAlert("Please enter something", "light");
 		} else {
-			this.props.searchUsers(this.state.text);
-			this.setState({ text: "" });
+			// this.props.searchUsers(this.state.text);
+			searchUsers(text);
+			// this.setState({ text: "" });
+			setText("");
 		}
 	};
 
