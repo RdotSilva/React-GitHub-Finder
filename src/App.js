@@ -91,7 +91,10 @@ const App = () => {
 	};
 
 	// Clears users from state
-	clearUsers = () => this.setState({ users: [], loading: false });
+	clearUsers = () => {
+		setUsers([]);
+		setLoading(false);
+	}
 
 	// Set Alert
 	setAlert = (msg, type) => {
