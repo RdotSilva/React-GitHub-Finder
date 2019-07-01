@@ -97,7 +97,7 @@ const App = () => {
 	};
 
 	// Set Alert
-	const setAlert = (msg, type) => {
+	const showAlert = (msg, type) => {
 		// this.setState({ alert: { msg, type } });
 		setAlert({ msg, type });
 
@@ -120,7 +120,7 @@ const App = () => {
 										searchUsers={searchUsers}
 										clearUsers={clearUsers}
 										showClear={users.length > 0 ? true : false}
-										setAlert={setAlert}
+										setAlert={showAlert}
 									/>
 									<Users loading={loading} users={users} />
 								</Fragment>
