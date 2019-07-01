@@ -38,7 +38,7 @@ const App = () => {
 	// }
 
 	// Search GitHub users
-	searchUsers = async text => {
+	const searchUsers = async text => {
 		// Class way
 		// this.setState({ loading: true });
 
@@ -59,7 +59,7 @@ const App = () => {
 	};
 
 	// Get single GitHub user
-	getUser = async username => {
+	const getUser = async username => {
 		// this.setState({ loading: true });
 		setLoading(true);
 
@@ -75,7 +75,7 @@ const App = () => {
 	};
 
 	// Get users repos
-	getUserRepos = async username => {
+	const getUserRepos = async username => {
 		// this.setState({ loading: true });
 		setLoading(true);
 
@@ -91,13 +91,13 @@ const App = () => {
 	};
 
 	// Clears users from state
-	clearUsers = () => {
+	const clearUsers = () => {
 		setUsers([]);
 		setLoading(false);
 	};
 
 	// Set Alert
-	setAlert = (msg, type) => {
+	const setAlert = (msg, type) => {
 		// this.setState({ alert: { msg, type } });
 		setAlert({ msg, type });
 
