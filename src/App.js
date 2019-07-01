@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from "react";
+import React, { Fragment, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/layout/Navbar";
@@ -9,14 +9,22 @@ import Alert from "./components/layout/Alert";
 import About from "./components/pages/About";
 import User from "./components/users/User";
 
-class App extends Component {
-	state = {
-		users: [],
-		user: {},
-		repos: [],
-		loading: false,
-		alert: null
-	};
+const App = () => {
+	// useState way
+	const [users, setUsers] = useState([]);
+	const [user, setUser] = useState({});
+	const [repos, setRepos] = useState([]);
+	const [loading, setLoading] = useState(false);
+	const [alert, setAlert] = useState(null);
+
+	// Class based state way
+	// state = {
+	// 	users: [],
+	// 	user: {},
+	// 	repos: [],
+	// 	loading: false,
+	// 	alert: null
+	// };
 
 	// async componentDidMount() {
 	// 	this.setState({ loading: true });
@@ -31,15 +39,23 @@ class App extends Component {
 
 	// Search GitHub users
 	searchUsers = async text => {
-		this.setState({ loading: true });
+		// Class way
+		// this.setState({ loading: true });
+
+		// useState way
+		setLoading(true);
 
 		const res = await Axios.get(
 			`https://api.github.com/search/users?q=${text}&client_id=${
 				process.env.REACT_APP_GITHUB_CLIENT_ID
 			}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
 		);
+		// class way
+		// this.setState({ users: res.data.items, loading: false });
 
-		this.setState({ users: res.data.items, loading: false });
+		// useState way
+		setUsers(res.data.items);
+		setLoading(false);
 	};
 
 	// Get single GitHub user
