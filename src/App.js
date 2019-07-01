@@ -109,7 +109,7 @@ const App = () => {
 			<div className="App">
 				<Navbar />
 				<div className="container">
-					<Alert alert={this.state.alert} />
+					<Alert alert={alert} />
 					<Switch>
 						<Route
 							exact
@@ -117,10 +117,10 @@ const App = () => {
 							render={props => (
 								<Fragment>
 									<Search
-										searchUsers={this.searchUsers}
-										clearUsers={this.clearUsers}
+										searchUsers={searchUsers}
+										clearUsers={clearUsers}
 										showClear={users.length > 0 ? true : false}
-										setAlert={this.setAlert}
+										setAlert={setAlert}
 									/>
 									<Users loading={loading} users={users} />
 								</Fragment>
@@ -133,8 +133,8 @@ const App = () => {
 							render={props => (
 								<User
 									{...props}
-									getUser={this.getUser}
-									getUserRepos={this.getUserRepos}
+									getUser={getUser}
+									getUserRepos={getUserRepos}
 									user={user}
 									repos={repos}
 									loading={loading}
