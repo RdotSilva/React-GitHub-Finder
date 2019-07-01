@@ -4,14 +4,13 @@ import Repos from "../repos/Repos";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const  User = () => {
+const User = ({user, loading, getUser, getRepos, repos, match}) => {
 
 	componentDidMount() {
-		this.props.getUser(this.props.match.params.login);
-		this.props.getUserRepos(this.props.match.params.login);
+		this.props.getUser(match.params.login);
+		this.props.getUserRepos(match.params.login);
 	}
 
-	render() {
 		const {
 			name,
 			avatar_url,
@@ -27,9 +26,7 @@ const  User = () => {
 			public_gists,
 			hireable,
 			company
-		} = this.props.user;
-
-		const { loading, repos } = this.props;
+		} = user;
 
 		if (loading) return <Spinner />;
 
@@ -99,7 +96,6 @@ const  User = () => {
 				<Repos repos={repos} />
 			</Fragment>
 		);
-	}
 }
 
 User.propTypes = {
