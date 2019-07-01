@@ -98,9 +98,10 @@ const App = () => {
 
 	// Set Alert
 	setAlert = (msg, type) => {
-		this.setState({ alert: { msg, type } });
+		// this.setState({ alert: { msg, type } });
+		setAlert({msg, type})
 
-		setTimeout(() => this.setState({ alert: null }), 5000);
+		setTimeout(() => setAlert(null), 5000);
 	};
 
 	render() {
