@@ -76,7 +76,8 @@ const App = () => {
 
 	// Get users repos
 	getUserRepos = async username => {
-		this.setState({ loading: true });
+		// this.setState({ loading: true });
+		setLoading(true);
 
 		const res = await Axios.get(
 			`https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc&client_id=${
@@ -84,7 +85,9 @@ const App = () => {
 			}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
 		);
 
-		this.setState({ repos: res.data, loading: false });
+		// this.setState({ repos: res.data, loading: false });
+		setRepos(res.data);
+		setLoading(false);
 	};
 
 	// Clears users from state
