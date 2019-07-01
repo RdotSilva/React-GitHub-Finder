@@ -94,61 +94,58 @@ const App = () => {
 	clearUsers = () => {
 		setUsers([]);
 		setLoading(false);
-	}
+	};
 
 	// Set Alert
 	setAlert = (msg, type) => {
 		// this.setState({ alert: { msg, type } });
-		setAlert({msg, type})
+		setAlert({ msg, type });
 
 		setTimeout(() => setAlert(null), 5000);
 	};
 
-	render() {
-		const { users, loading, user, repos } = this.state;
-		return (
-			<Router>
-				<div className="App">
-					<Navbar />
-					<div className="container">
-						<Alert alert={this.state.alert} />
-						<Switch>
-							<Route
-								exact
-								path="/"
-								render={props => (
-									<Fragment>
-										<Search
-											searchUsers={this.searchUsers}
-											clearUsers={this.clearUsers}
-											showClear={users.length > 0 ? true : false}
-											setAlert={this.setAlert}
-										/>
-										<Users loading={loading} users={users} />
-									</Fragment>
-								)}
-							/>
-							<Route exact path="/about" component={About} />
-							<Route
-								exact
-								path="/user/:login"
-								render={props => (
-									<User
-										{...props}
-										getUser={this.getUser}
-										getUserRepos={this.getUserRepos}
-										user={user}
-										repos={repos}
-										loading={loading}
+	return (
+		<Router>
+			<div className="App">
+				<Navbar />
+				<div className="container">
+					<Alert alert={this.state.alert} />
+					<Switch>
+						<Route
+							exact
+							path="/"
+							render={props => (
+								<Fragment>
+									<Search
+										searchUsers={this.searchUsers}
+										clearUsers={this.clearUsers}
+										showClear={users.length > 0 ? true : false}
+										setAlert={this.setAlert}
 									/>
-								)}
-							/>
-						</Switch>
-					</div>
+									<Users loading={loading} users={users} />
+								</Fragment>
+							)}
+						/>
+						<Route exact path="/about" component={About} />
+						<Route
+							exact
+							path="/user/:login"
+							render={props => (
+								<User
+									{...props}
+									getUser={this.getUser}
+									getUserRepos={this.getUserRepos}
+									user={user}
+									repos={repos}
+									loading={loading}
+								/>
+							)}
+						/>
+					</Switch>
 				</div>
-			</Router>
-		);
-	}
-}
+			</div>
+		</Router>
+	);
+};
 
 export default App;
