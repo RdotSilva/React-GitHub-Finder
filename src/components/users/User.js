@@ -11,10 +11,12 @@ const User = ({ user, loading, getUser, getUserRepos, repos, match }) => {
 	// 	this.props.getUserRepos(this.props.match.params.login);
 	// }
 
+	// Mimics componentDidMount (empty brackets at end to only run once)
 	useEffect(() => {
 		getUser(match.params.login);
 		getUserRepos(match.params.login);
-	});
+		// eslint-disable-next-line
+	}, []);
 
 	const {
 		name,
