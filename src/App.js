@@ -4,7 +4,6 @@ import "./App.css";
 import Navbar from "./components/layout/Navbar";
 import Users from "./components/users/Users";
 import Search from "./components/users/Search";
-import Axios from "axios";
 import Alert from "./components/layout/Alert";
 import About from "./components/pages/About";
 import User from "./components/users/User";
@@ -14,8 +13,8 @@ import GithubState from "./context/github/GithubState";
 const App = () => {
 	// useState way
 	// const [users, setUsers] = useState([]);
-	const [repos, setRepos] = useState([]);
-	const [loading, setLoading] = useState(false);
+	// const [repos, setRepos] = useState([]);
+	// const [loading, setLoading] = useState(false);
 	const [alert, setAlert] = useState(null);
 
 	// Class based state way
