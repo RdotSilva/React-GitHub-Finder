@@ -11,7 +11,8 @@ export default (state, action) => {
 		case SEARCH_USERS:
 			return {
 				...state,
-				users: action.payload
+				users: action.payload,
+				loading: false
 			};
 		case SET_LOADING:
 			return {
