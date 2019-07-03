@@ -9,6 +9,12 @@ const AlertState = props => {
 	const [state, dispatch] = useReducer(AlertReducer, initialState);
 
 	// Set Alert
+	const setAlert = (msg, type) => {
+		// this.setState({ alert: { msg, type } });
+		setAlert({ msg, type });
+
+		setTimeout(() => setAlert(null), 5000);
+	};
 
 	return (
 		<AlertContext.Provider
