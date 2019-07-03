@@ -51,7 +51,11 @@ const GithubState = props => {
 
 	// Get Repos
 
-	// Clear Users
+	// Clears users from state
+	const clearUsers = () => {
+		setUsers([]);
+		setLoading(false);
+	};
 
 	// Set Loading
 	const setLoading = () => dispatch({ type: SET_LOADING });
