@@ -22,11 +22,13 @@ const GithubState = props => {
 
 	// Search GitHub users
 	const searchUsers = async text => {
+		setLoading();
+
 		// Class way
 		// this.setState({ loading: true });
 
 		// useState way
-		setLoading(true);
+		// setLoading(true);
 
 		const res = await Axios.get(
 			`https://api.github.com/search/users?q=${text}&client_id=${
@@ -37,8 +39,12 @@ const GithubState = props => {
 		// this.setState({ users: res.data.items, loading: false });
 
 		// useState way
-		setUsers(res.data.items);
-		setLoading(false);
+		// setUsers(res.data.items);
+		// setLoading(false);
+		dispatch({
+			type: SEARCH_USERS,
+			payload: res.data
+		});
 	};
 
 	// Get User
