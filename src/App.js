@@ -38,14 +38,6 @@ const App = () => {
 	// 	this.setState({ users: res.data, loading: false });
 	// }
 
-	// Set Alert
-	const showAlert = (msg, type) => {
-		// this.setState({ alert: { msg, type } });
-		setAlert({ msg, type });
-
-		setTimeout(() => setAlert(null), 5000);
-	};
-
 	return (
 		<GithubState>
 			<AlertState>
@@ -53,14 +45,13 @@ const App = () => {
 					<div className="App">
 						<Navbar />
 						<div className="container">
-							<Alert alert={alert} />
 							<Switch>
 								<Route
 									exact
 									path="/"
 									render={props => (
 										<Fragment>
-											<Search setAlert={showAlert} />
+											<Search />
 											<Users />
 										</Fragment>
 									)}
