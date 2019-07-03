@@ -48,6 +48,7 @@ const GithubState = props => {
 	// Clear Users
 
 	// Set Loading
+	const setLoading = () => dispatch({ type: SET_LOADING });
 
 	return (
 		<GithubContext.Provider
