@@ -8,7 +8,7 @@ import GithubContext from "../../context/github/githubContext";
 const User = ({ match }) => {
 	const githubContext = useContext(GithubContext);
 
-	const { getUser, loading, user } = githubContext;
+	const { getUser, loading, user, repos, getUserRepos } = githubContext;
 
 	// Class based way
 	// componentDidMount() {
