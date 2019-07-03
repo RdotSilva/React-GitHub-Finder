@@ -16,7 +16,7 @@ const App = () => {
 	// const [users, setUsers] = useState([]);
 	// const [repos, setRepos] = useState([]);
 	// const [loading, setLoading] = useState(false);
-	const [alert, setAlert] = useState(null);
+	// const [alert, setAlert] = useState(null);
 
 	// Class based state way
 	// state = {
