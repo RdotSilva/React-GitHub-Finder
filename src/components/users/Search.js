@@ -1,13 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
+import GithubContext from "../../context/github/githubContext";
 
 const Search = ({ showClear, clearUsers, setAlert }) => {
-	// Class based way of doing state
-	// state = {
-	// 	text: ""
-	// };
+	const githubContext = useContext(GithubContext);
 
-	// useState way
 	const [text, setText] = useState("");
 
 	// class way
@@ -24,7 +21,8 @@ const Search = ({ showClear, clearUsers, setAlert }) => {
 			setAlert("Please enter something", "light");
 		} else {
 			// this.props.searchUsers(this.state.text);
-			searchUsers(text);
+			// searchUsers(text);
+			githubContext.searchUsers(text);
 			// this.setState({ text: "" });
 			setText("");
 		}
