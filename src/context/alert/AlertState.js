@@ -11,9 +11,13 @@ const AlertState = props => {
 	// Set Alert
 	const setAlert = (msg, type) => {
 		// this.setState({ alert: { msg, type } });
-		setAlert({ msg, type });
+		// setAlert({ msg, type });
+		dispatch({
+			type: SET_ALERT,
+			payload: { msg, type }
+		});
 
-		setTimeout(() => setAlert(null), 5000);
+		setTimeout(() => dispatch({ type: REMOVE_ALERT }), 5000);
 	};
 
 	return (
