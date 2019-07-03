@@ -13,7 +13,7 @@ import GithubState from "./context/github/GithubState";
 
 const App = () => {
 	// useState way
-	const [users, setUsers] = useState([]);
+	// const [users, setUsers] = useState([]);
 	const [user, setUser] = useState({});
 	const [repos, setRepos] = useState([]);
 	const [loading, setLoading] = useState(false);
@@ -38,22 +38,6 @@ const App = () => {
 
 	// 	this.setState({ users: res.data, loading: false });
 	// }
-
-	// Get single GitHub user
-	const getUser = async username => {
-		// this.setState({ loading: true });
-		setLoading(true);
-
-		const res = await Axios.get(
-			`https://api.github.com/users/${username}?client_id=${
-				process.env.REACT_APP_GITHUB_CLIENT_ID
-			}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
-		);
-
-		// this.setState({ user: res.data, loading: false });
-		setUser(res.data);
-		setLoading(false);
-	};
 
 	// Get users repos
 	const getUserRepos = async username => {
