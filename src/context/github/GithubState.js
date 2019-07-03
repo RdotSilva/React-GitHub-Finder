@@ -70,7 +70,8 @@ const GithubState = props => {
 	// Get users repos
 	const getUserRepos = async username => {
 		// this.setState({ loading: true });
-		setLoading(true);
+		// setLoading(true);
+		setLoading();
 
 		const res = await Axios.get(
 			`https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc&client_id=${
@@ -79,8 +80,13 @@ const GithubState = props => {
 		);
 
 		// this.setState({ repos: res.data, loading: false });
-		setRepos(res.data);
-		setLoading(false);
+		// setRepos(res.data);
+		// setLoading(false);
+
+		dispatch({
+			type: GET_REPOS,
+			payload: res.data
+		});
 	};
 
 	// Clears users from state
