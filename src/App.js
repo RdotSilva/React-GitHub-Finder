@@ -44,17 +44,9 @@ const App = () => {
 					<div className="App">
 						<Navbar />
 						<div className="container">
+							<Alert />
 							<Switch>
-								<Route
-									exact
-									path="/"
-									render={props => (
-										<Fragment>
-											<Search />
-											<Users />
-										</Fragment>
-									)}
-								/>
+								<Route exact path="/" component={Home} />
 								<Route exact path="/about" component={About} />
 								<Route exact path="/user/:login" component={User} />
 							</Switch>
