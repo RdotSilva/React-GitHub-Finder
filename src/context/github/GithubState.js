@@ -31,62 +31,38 @@ const GithubState = props => {
 
 	const [state, dispatch] = useReducer(GithubReducer, initialState);
 
-	// Search GitHub users
 	const searchUsers = async text => {
 		setLoading();
-
-		// Class way
-		// this.setState({ loading: true });
-
-		// useState way
-		// setLoading(true);
 
 		const res = await axios.get(
 			`https://api.github.com/search/users?q=${text}&client_id=${githubClientId}&client_secret=${githubClientSecret}`
 		);
-		// class way
-		// this.setState({ users: res.data.items, loading: false });
 
-		// useState way
-		// setUsers(res.data.items);
-		// setLoading(false);
 		dispatch({
 			type: SEARCH_USERS,
 			payload: res.data.items
 		});
 	};
 
-	// Get single GitHub user
 	const getUser = async username => {
-		// this.setState({ loading: true });
 		setLoading();
 
 		const res = await axios.get(
 			`https://api.github.com/users/${username}?client_id=${githubClientId}&client_secret=${githubClientSecret}`
 		);
 
-		// this.setState({ user: res.data, loading: false });
-		// setUser(res.data);
-		// setLoading(false);
 		dispatch({
 			type: GET_USER,
 			payload: res.data
 		});
 	};
 
-	// Get users repos
 	const getUserRepos = async username => {
-		// this.setState({ loading: true });
-		// setLoading(true);
 		setLoading();
 
 		const res = await axios.get(
 			`https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc&client_id=${githubClientId}&client_secret=${githubClientSecret}`
 		);
-
-		// this.setState({ repos: res.data, loading: false });
-		// setRepos(res.data);
-		// setLoading(false);
 
 		dispatch({
 			type: GET_REPOS,
@@ -94,10 +70,8 @@ const GithubState = props => {
 		});
 	};
 
-	// Clears users from state
 	const clearUsers = () => dispatch({ type: CLEAR_USERS });
 
-	// Set Loading
 	const setLoading = () => dispatch({ type: SET_LOADING });
 
 	return (
