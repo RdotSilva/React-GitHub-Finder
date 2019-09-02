@@ -2,6 +2,9 @@
 
 QuickHub is a web application that allows you to search GitHub users and view information on their profile. This project uses the GitHub API to search for users in the database and display their profile information including repos.
 
+You can view a live version of the application here:
+https://quickhub1.netlify.com/
+
 ### Prerequisites
 
 You must first register for an account on GitHub if you don't already have one follow this link:
