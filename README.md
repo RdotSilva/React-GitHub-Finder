@@ -1,68 +1,99 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React QuickHub GitHub User Search
 
-## Available Scripts
+QuickHub is a web application that allows you to search GitHub users and view information on their profile. This project uses the GitHub API to search for users in the database and display their profile information including repos.
 
-In the project directory, you can run:
+### Prerequisites
 
-### `npm start`
+You must first register for an account on GitHub if you don't already have one follow this link:
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+https://github.com/join
+```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Getting your Client ID/Secret key and entering it in the script.
 
-### `npm test`
+1. Sign up and goto your account settings page:
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+https://github.com/settings/applications/new
+```
 
-### `npm run build`
+2. Enter the following information:
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<table class="table"><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Application name</td>
+<td>The name of your app</td>
+</tr>
+<tr>
+<td>Homepage URL</td>
+<td><code>https://YOUR_DOMAIN</code></td>
+</tr>
+<tr>
+<td>Application description</td>
+<td>The description of your app users will see (Optional)</td>
+</tr>
+<tr>
+<td>Authorization callback URL</td>
+<td><code>https://YOUR_DOMAIN/login/callback</code></td>
+</tr>
+</tbody>
+</table>
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+3. Copy your Client ID and Client Secret
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+Go to GitHub personal settings, then click Developer settings -> OAuth Apps -> Select the app you created
+and you should see a Client ID and Client Secret.
+```
 
-### `npm run eject`
+4. Create a file named called .env.local in the main project directory.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+5. Add your Client ID and Client Secret as follows:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+REACT_APP_GITHUB_CLIENT_ID="YOUR_CLIENT_ID"
+REACT_APP_GITHUB_CLIENT_SECRET="YOUR_CLIENT_SECRET"
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Installation
 
-## Learn More
+1. Install dependencies in main project folder.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+npm install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Running the servers
 
-### Code Splitting
+1. Start React server
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```
+npm start
+```
 
-### Analyzing the Bundle Size
+## Screenshots
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+![Search Users](https://i.imgur.com/kUGYVfq.png "Search Users")
+![User Profile](https://i.imgur.com/6bSQRSA.png "User Profile")
 
-### Making a Progressive Web App
+## Built With
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- React (hooks & context API)
+- JavaScript
+- NodeJS
 
-### Advanced Configuration
+## APIs used
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- https://developer.github.com/v3/
 
-### Deployment
+## License
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
