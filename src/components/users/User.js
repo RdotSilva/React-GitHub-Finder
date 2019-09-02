@@ -10,13 +10,6 @@ const User = ({ match }) => {
 
 	const { getUser, loading, user, repos, getUserRepos } = githubContext;
 
-	// Class based way
-	// componentDidMount() {
-	// 	this.props.getUser(this.props.match.params.login);
-	// 	this.props.getUserRepos(this.props.match.params.login);
-	// }
-
-	// Mimics componentDidMount (empty brackets at end to only run once)
 	useEffect(() => {
 		getUser(match.params.login);
 		getUserRepos(match.params.login);
