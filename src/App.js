@@ -12,32 +12,6 @@ import GithubState from "./context/github/GithubState";
 import AlertState from "./context/alert/AlertState";
 
 const App = () => {
-	// useState way
-	// const [users, setUsers] = useState([]);
-	// const [repos, setRepos] = useState([]);
-	// const [loading, setLoading] = useState(false);
-	// const [alert, setAlert] = useState(null);
-
-	// Class based state way
-	// state = {
-	// 	users: [],
-	// 	user: {},
-	// 	repos: [],
-	// 	loading: false,
-	// 	alert: null
-	// };
-
-	// async componentDidMount() {
-	// 	this.setState({ loading: true });
-	// 	const res = await Axios.get(
-	// 		`https://api.github.com/users?client_id=${
-	// 			process.env.REACT_APP_GITHUB_CLIENT_ID
-	// 		}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
-	// 	);
-
-	// 	this.setState({ users: res.data, loading: false });
-	// }
-
 	return (
 		<GithubState>
 			<AlertState>
